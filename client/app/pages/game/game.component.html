@@ -1,0 +1,18 @@
+<three-orbit-controls [rotateSpeed]=1 [zoomSpeed]=1.2 [listeningControlElement]=mainRenderer.renderPane>
+  <three-webgl-renderer #mainRenderer>
+
+    <three-perspective-camera [fov]=45 [near]=1 [far]=1100 positionX=20 positionY=20 positionZ=0></three-perspective-camera>
+
+    <three-scene>
+      <three-point-light color="white" intensity="1" distance="1000" translateX=50 translateY=50 translateZ=50></three-point-light>
+      <three-point-light color="#FAFAF0" intensity="1" distance="1000" translateX=-50 translateY=50 translateZ=20></three-point-light>
+
+      <game-pieces-loader
+        model="assets/model/allPieces.obj"
+        material='assets/model/allPieces.mtl'
+        [renderer]=mainRenderer>
+      </game-pieces-loader>
+   
+    </three-scene>
+  </three-webgl-renderer>
+</three-orbit-controls>
